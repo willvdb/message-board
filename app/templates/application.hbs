@@ -1,3 +1,27 @@
-<h1>Message Board</h1>
+<header id="header">
+	<h1>Messages</h1>
+	<form {{action "createPost" newPostTitle newPostContent on="submit" }} class="form-inline">
+		<div class="input-group">
+			{{input value=newPostTitle class='form-control' placeholder="title"}}
+			{{input value=newPostContent class='form-control' placeholder="content"}}
+			<div class="input-group-btn">
+				<button type="submit" class="btn btn-success">Create Post</button>
+			</div>
+		</div>
+	</form>
+</header>
 
-{{outlet}}
+<h3>You currently have {{model.posts.length}} posts</h3>
+<ul class="post-list">
+	{{#each model.posts as |post|}}
+		<div class="post">
+			<div class="controls">
+				<span href="edit/{{post.id}}" onclick={{action 'updatePost' post}} class="update">Update</span>
+				<span href="#" class="delete" onclick={{action 'deletePost' post.id}}>Delete</span>
+			</div>
+			 {{input value=post.title class='form-control' placeholder="title"}} {{input value=post.content class='form-control'
+			placeholder="content"}}
+
+		</div>
+	{{/each}}
+</ul>

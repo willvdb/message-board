@@ -1,0 +1,33 @@
+.post-list {
+	height: 70vh;
+	border: 1px solid;
+	width: 25rem;
+	overflow: auto;
+}
+
+.post {
+	border: 1px solid;
+	display: flex;
+	flex-flow: column;
+	width: 20rem;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.controls {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-end
+}
+
+.update {
+	color: blue;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.delete {
+	color: red;
+	cursor: pointer;
+	font-weight: bold;
+}
